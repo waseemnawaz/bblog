@@ -9,4 +9,8 @@ class SimplePagesController < ApplicationController
 
   def contact
   end
+
+  def the_projects
+  	@projects = Project.all
+  end
 end
