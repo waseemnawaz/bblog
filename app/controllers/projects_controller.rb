@@ -4,16 +4,16 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    user = User.find(params[:user_id])
-    @projects = user.projects
+    @user = User.find(params[:user_id])
+    @projects = @user.projects
     #@projects = Project.all
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    user = User.find(params[:user_id])
-    @project = user.projects.find(params[:id])
+    @user = User.find(params[:user_id])
+    @project = @user.projects.find(params[:id])
   end
 
   # GET /projects/new
