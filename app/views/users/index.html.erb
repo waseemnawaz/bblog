@@ -1,5 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container-fluid anchor">
+  <div class="new">
+    <h1>The Makers</h1>
+  </div>
+ 
+  <div class="row" id="productos">
+    <% @users.each do |user| %>
+    <div class="col-md-4">
+      <p><%= user.first_name %></p>
+      <p><%= user.last_name %></p>
+      <p><%= user.title %></p>
+      <p><%= user.content %></p>
+      <p><%= link_to(image_tag(user.image_url, class: "img-responsive"), user) %><!--/a--></p>
+      <p><%= link_to 'Show', user %></p>
+      <p><%= link_to 'Edit', edit_user_path(user) %></p>
+      <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div><!-- /col -->
+    <% end %> 
+  </div>
+</div>
+
 <h1>Users</h1>
 
 <table>

@@ -1,3 +1,4 @@
+<div class="container anchor introshow">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -22,9 +23,11 @@
 
 <p>
   <strong>Image url:</strong>
-  <%= @user.image_url %>
+  <%= image_tag(@user.image_url, class: "img-zoom img-responsive bigshowpic") %>
 </p>
+
 
 <%= link_to 'Projects', user_projects_path(@user) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
