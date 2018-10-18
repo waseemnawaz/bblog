@@ -30,7 +30,7 @@
 <p>
   <strong>Image url:</strong>
   <%#= image_tag(@user.image_url, class: "img-zoom img-responsive bigshowpic") %>
-  <%#= image_tag(@user.image_url) if @user.image_url %>
+  <%= image_tag(@user.image_url) unless @user.image_url.blank? %>
 </p>
 
 <p><%= link_to 'Show', @user %></p>
