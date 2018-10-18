@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   get 'simple_pages/the_projects'
   #get 'simple_pages/index'
   get 'simple_pages/about'
