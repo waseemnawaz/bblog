@@ -41,4 +41,7 @@
 <%= link_to 'Projects', user_projects_path(@user) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<% if user_signed_in? %>
+  <%= link_to "Change your password", edit_user_registration_path %>
+<% end %>
 </div>
