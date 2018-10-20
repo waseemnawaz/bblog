@@ -33,10 +33,11 @@
   <%= image_tag(@user.image_url, class: "img-zoom img-responsive bigshowpic") unless @user.image_url.blank? %>
 </p>
 
-<p><%= link_to 'Show', @user %></p>
-<p><%= link_to 'Edit', edit_user_path(@user) %></p>
-<p><%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-
+<% if signed_in? && current_user %>
+  <p><%= link_to 'Show', @user %></p>
+  <p><%= link_to 'Edit', edit_user_path(@user) %></p>
+  <p><%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
 
 <%= link_to 'Projects', user_projects_path(@user) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
