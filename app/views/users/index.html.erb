@@ -22,8 +22,10 @@
     </div><!-- /col -->
     <% end %> 
   </div>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to 'New User', new_user_path %>
+  <% end %> 
 </div>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<%#= link_to 'New User', new_user_path %>

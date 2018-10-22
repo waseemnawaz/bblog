@@ -19,9 +19,10 @@
     </div><!-- /col -->
     <% end %> 
   </div>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to 'New Project', new_user_project_path %>
+  <% end %> 
+  <%= link_to 'Related Maker', user_path(@user) %>
 </div>
 
-<br>
-
-<%= link_to 'New Project', new_user_project_path %>
-<%= link_to 'Related User', user_path(@user) %>
