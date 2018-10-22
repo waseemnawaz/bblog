@@ -6,15 +6,17 @@
   <div class="row" id="productos">
     <% @users.each do |user| %>
     <div class="col-md-4">
-      <p><%= user.first_name %></p>
-      <p><%= user.last_name %></p>
+      <!--p><%#= user.first_name %></p>
+      <p><%#= user.last_name %></p-->
       <p><%= user.title %></p>
-      <p><%= user.content %></p>
-      <p><%#= link_to(image_tag(user.image_url, class: "img-responsive"), user) if user.image_url %><!--/a--></p>
+      <!--p><%#= user.content %></p>
+      <p><%#= link_to(image_tag(user.image_url, class: "img-responsive"), user) if user.image_url %></p-->
       <p><%= link_to(image_tag(user.image_url, class: "img-responsive"), user) unless user.image_url.blank? %><!--/a--></p>
-      <p><%= link_to 'Show', user %></p>
-      <p><%= link_to 'Edit', edit_user_path(user) %></p>
-      <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% if user_signed_in? %>
+        <p><%= link_to 'Show', user %></p>
+        <p><%= link_to 'Edit', edit_user_path(user) %></p>
+        <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %> 
     </div><!-- /col -->
     <% end %> 
   </div>
@@ -30,12 +32,14 @@
   <div class="row" id="productos">
     <% @projects.each do |project| %>
     <div class="col-md-4">
-      <p><%= project.title %></p>
-      <p><%= project.content %></p>
-      <p><%= link_to(image_tag(project.image_url, class: "img-responsive"), project.user) %><!--/a--></p>
-      <p><%= link_to 'Show', [project.user, project] %></p>
-      <p><%= link_to 'Edit', edit_user_project_path(project.user, project) %></p>
-      <p><%= link_to 'Destroy', [project.user, project], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <p><%#= project.title %></p>
+      <!--p><%#= project.content %></p-->
+      <p><%= link_to(image_tag(project.image_url, class: "img-responsive"), project.user) %></p>
+      <% if user_signed_in? %>
+        <p><%= link_to 'Show', [project.user, project] %></p>
+        <p><%= link_to 'Edit', edit_user_project_path(project.user, project) %></p>
+        <p><%= link_to 'Destroy', [project.user, project], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
     </div><!-- /col -->
     <% end %> 
   </div>
