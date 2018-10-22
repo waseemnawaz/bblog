@@ -22,6 +22,6 @@
 </p-->
 
 <%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> |
-<%= link_to 'Back', user_projects_path(@project.user) %>
-<%= link_to 'Related Maker', user_path(@user) %>
+<%= link_to 'Back to all this maker\'s projects', user_projects_path(@project.user) %> |
+<%= link_to 'Back to the project\'s maker', user_path(@user) %>
 </div>

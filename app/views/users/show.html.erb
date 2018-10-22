@@ -39,9 +39,9 @@
   <p><%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <% end %>
 
-<%= link_to 'Projects', user_projects_path(@user) %> |
+<%= link_to 'This maker\'s projects', user_projects_path(@user) %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back to all makers', users_path %>
 <% if user_signed_in? %>
   <%= link_to "Change your password", edit_user_registration_path %>
 <% end %>
