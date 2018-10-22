@@ -1,5 +1,8 @@
 <div class="container-fluid anchor">
   <div class="new">
+    <% #Category.all.each do |cat| %>
+      <%#= link_to cat.name, simple_pages_the_projects_path(category: cat.name) %>
+    <% #end %>
     <h1>The projects</h1>
   </div>
  

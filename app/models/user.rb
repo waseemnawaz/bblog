@@ -7,4 +7,5 @@ class User < ApplicationRecord
  #validates :last_name,  presence: true
  #validates :title, presence: true, length: { minimum: 5 }
  has_many :projects, dependent: :destroy
+ belongs_to :category
 end

@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% #Category.all.each do |cat| %>
+  <%#= link_to cat.name, user_projects_path(category: cat.name) %>
+<% #end %>
+
 <div class="container-fluid anchor">
   <div class="new">
     <h1>The projects</h1>
@@ -21,8 +25,9 @@
   </div>
   <br>
   <% if user_signed_in? %>
-    <%= link_to 'New Project', new_user_project_path %>
+    <%= link_to 'New Project', new_user_project_path %> |
   <% end %> 
   <%= link_to 'The projects\' Maker', user_path(@user) %>
+  <%#= link_to 'Back to all the makers page', users_path(@user) %>
 </div>
 

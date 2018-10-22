@@ -40,8 +40,8 @@
 <% end %>
 
 <%= link_to 'This maker\'s projects', user_projects_path(@user) %> |
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back to all makers', users_path %>
+<%= link_to 'Edit my profile', edit_user_path(@user) %> |
+<%= link_to 'Back to all makers', users_path %> |
 <% if user_signed_in? %>
   <%= link_to "Change your password", edit_user_registration_path %>
 <% end %>

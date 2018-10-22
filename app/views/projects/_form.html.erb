@@ -30,6 +30,10 @@
     <%#= form.label :user_id %>
     <%#= form.text_field :user_id %>
   </div-->
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"} %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
