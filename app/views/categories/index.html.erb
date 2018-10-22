@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if signed_in? && current_user.admin? %>
 <h1>Categories</h1>
 
 <table>
@@ -25,3 +25,4 @@
 <br>
 
 <%= link_to 'New Category', new_category_path %>
+<% end %>
