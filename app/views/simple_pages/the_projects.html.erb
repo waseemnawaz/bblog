@@ -1,6 +1,3 @@
-<h1>SimplePages#the_projects</h1>
-<p>Find me in app/views/simple_pages/the_projects.html.erb</p>
-
 <div class="container-fluid anchor">
   <div class="new">
     <h1>The projects</h1>
@@ -20,30 +17,3 @@
   </div>
 </div>
 
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image url</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.content %></td>
-        <td><%= project.image_url %></td>
-        <!--td><%#= project.user %></td-->
-        <td><%= link_to 'Show', [project.user, project] %></td>
-        <td><%= link_to 'Edit', edit_user_project_path(project.user, project) %></td>
-        <td><%= link_to 'Destroy', [project.user, project], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

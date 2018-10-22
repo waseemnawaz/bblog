@@ -24,7 +24,7 @@
     <% if alert %>
       <p id="alert" class="alert alert-info"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    
     <nav class="navbar navbar-inverse navbar-fixed-top eupopup eupopup-bottomright" role="navigation" id="navigacion">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -65,7 +65,7 @@
         </div>
       </div>
     </nav> <!-- end navbar-->
-    
+    <%= yield %>
     <footer>
       <div class="copyright">
          &copy; <%= Date.today %> The Art App
