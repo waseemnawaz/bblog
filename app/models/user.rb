@@ -8,4 +8,5 @@ class User < ApplicationRecord
  #validates :title, presence: true, length: { minimum: 5 }
  has_many :projects, dependent: :destroy
  #belongs_to :category
+ validates :image_url, allow_blank: true, format: { with: %r{.(gif|jpg|png)\Z}i, message: 'must be a URL for GIF, JPG or PNG image.' }
 end
